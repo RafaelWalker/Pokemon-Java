@@ -27,6 +27,7 @@ public class Conta2 {
     public void setSaldo(double saldo){
         if(saldo>0){
             this.saldo = saldo;
+            System.out.println("Teste");
         }
     }
     public double getSaldo(){
