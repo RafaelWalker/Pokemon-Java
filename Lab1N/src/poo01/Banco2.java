@@ -10,7 +10,7 @@ package poo01;
  * @author angelodaluz
  */
 public class Banco2 extends javax.swing.JFrame {
-    ContaBancaria conta = new ContaBancaria();
+    ContaBancaria conta = new ContaBancaria(123123,2333);
     /**
      * Creates new form Banco2
      */

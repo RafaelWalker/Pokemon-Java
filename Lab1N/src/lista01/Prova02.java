@@ -13,7 +13,7 @@ import poo01.ContaBancaria;
  */
 public class Prova02 {
     public static void main(String[] args) {
-        ContaBancaria c = new ContaBancaria();
-        c.
+        ContaBancaria c = new ContaBancaria(123123,22222);
+        
     }
 }

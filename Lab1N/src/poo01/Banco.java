@@ -14,12 +14,13 @@ import java.util.Scanner;
 public class Banco {
 
     public static void main(String[] args) {
-        ContaBancaria conta = new ContaBancaria();
+        
         Scanner teclado = new Scanner(System.in);
         System.out.print("Agência: ");
         int agencia = teclado.nextInt();
         System.out.print("Conta: ");
         int contac = teclado.nextInt();
+        ContaBancaria conta = new ContaBancaria(agencia,contac);
         System.out.print("Saldo inicial: ");
         double saldo = teclado.nextDouble();
         System.out.print("Limite da conta: ");
