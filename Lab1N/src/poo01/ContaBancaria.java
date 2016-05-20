@@ -15,13 +15,33 @@ import java.util.logging.Logger;
  */
 public class ContaBancaria extends Object {
 
-    int agencia;
-    int conta;
-    double saldo;
-    double limite;
+    private int agencia;
+    private int conta;
+    private double saldo;
+    private double limite;
+
+    public ContaBancaria(int agencia, int conta) {
+        this.agencia = agencia;
+        this.conta = conta;
+    }
+
+    public ContaBancaria(int agencia, int conta, double saldo) {
+        this(agencia, conta);
+        setSaldo(saldo);
+    }
+
+    public void setSaldo(double saldo) {
+        if (saldo > 0) {
+            this.saldo = saldo;
+        }
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
 
     void criarConta(int ag, int cc, double s, double l) {
-        //Scanner teclado = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
         //System.out.print("Agência.: ");
         // Teste comentado commit
         agencia = ag;
@@ -41,17 +61,22 @@ public class ContaBancaria extends Object {
         saldo = saldo + valor;
     }
 
+    void exec(String nome, int valor) {
+
+    }
+
     /**
      * Método que efetua o saque na conta bancária
+     *
      * @param valor o valor a ser sacado
      * @return 1 para operação realizada com sucesso e -1 para falha.
      */
-     int sacar(double valor) {
+    int sacar(double valor) {
         processar();
         if ((saldo + limite >= valor)) {
             saldo = saldo - valor;
             return 1;
-        }else{
+        } else {
             return -1;
         }
     }
