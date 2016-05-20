@@ -131,6 +131,7 @@ public class Banco2 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int agencia = Integer.parseInt(jTAgencia.getText());
+        // Comentário de teste
         int conta2 = Integer.parseInt(jTextField2.getText());
         double saldo = Double.parseDouble(jTextField3.getText());
         double limite = Double.parseDouble(jTextField4.getText());
