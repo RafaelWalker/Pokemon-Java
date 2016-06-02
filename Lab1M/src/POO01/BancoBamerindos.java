@@ -12,7 +12,7 @@ package POO01;
 public class BancoBamerindos {
     public static void main(String[] args) {
         Conta2 conta = new Conta2(1111,2222);
-        conta.
+        //conta.
     }
  
 }

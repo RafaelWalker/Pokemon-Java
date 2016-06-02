@@ -15,6 +15,6 @@ public class NewClass {
     ContaBancaria c = new ContaBancaria();
     
     public static void main(String[] args) {
-        c.
+        //c.
     }
 }
