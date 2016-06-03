@@ -19,6 +19,7 @@ import util.Utilidades;
  */
 public class TesteStatic {
     public static void main(String[] args) throws IOException {
+        // Exemplo de modificação do arquivo para o gitlab
         //Utilidades util = new Utilidades();
         int numero1 = Utilidades.leInteiro("Digite um número qualquer:");
         int numero2 = Utilidades.leInteiro("Digite o segundo número: ");
