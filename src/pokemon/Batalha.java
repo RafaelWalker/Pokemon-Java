@@ -9,6 +9,27 @@ package pokemon;
  *
  * @author Carlos Magno
  */
-public class Batalha {
+public class Batalha extends Pokemon implements PokemonAction {
+
+    public Batalha(String nome, int hp, int cp) {
+        super(nome, hp, cp);
+    }
+
+    @Override
+    public int calculaPoderAtaque() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String ataque() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String defender() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+ 
     
 }
