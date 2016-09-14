@@ -3,13 +3,18 @@ package pokemon;
 import Utilidade.Util;
 import java.time.LocalDate;
 
-public class View {
+public class View  {
+
+    
+
+  
 
     public void menu() {
 
         int opcao = 0;
         do {
-            System.out.println("Pokemon");
+            System.out.println("########### Pokemon ############");
+            System.out.println("     Escolha o Seu Pokemon!     ");
             System.out.println("--------------------------------");
             System.out.println("1. Pokemon de Água              ");
             System.out.println("2. Pokemon de Fogo              ");
@@ -40,5 +45,9 @@ public class View {
             } 
         } while (opcao != 0);
     }
+
+   
+   
+    
 }
  
