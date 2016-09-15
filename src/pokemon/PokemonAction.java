@@ -11,7 +11,7 @@ package pokemon;
  */
 public interface PokemonAction {
     
-    String ataque();
+   String ataque();
    String defender();
     
     

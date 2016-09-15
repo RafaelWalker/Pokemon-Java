@@ -20,6 +20,8 @@ public class View  {
             System.out.println("2. Pokemon de Fogo              ");
             System.out.println("3. Pokemon de Terra             ");
             System.out.println("4. Pokemon de Eletricidade      ");
+            System.out.println("5. Treinar                      ");
+            System.out.println("6. Mostrar Status               ");
             System.out.println("0. Para Sair                    ");
             System.out.println("--------------------------------");
             
@@ -45,9 +47,10 @@ public class View  {
             } 
         } while (opcao != 0);
     }
+}     
 
    
    
     
-}
+
  
