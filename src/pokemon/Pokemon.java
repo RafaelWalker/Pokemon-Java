@@ -67,6 +67,12 @@ public abstract class Pokemon implements PokemonAction{
 //    }
         
     public abstract int calculaPoderAtaque();
+
+    @Override
+    public String toString() {
+        return "Pokemon{" + "nome=" + nome + ", hp=" + hp + ", cp=" + cp + ", poderAtaque=" + poderAtaque + ", tipo=" + tipo + '}';
+    }
+
 }
 
     
