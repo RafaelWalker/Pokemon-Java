@@ -6,8 +6,8 @@ package pokemon;
  */
 public class PokemonDeAgua extends Pokemon  {
 
-    public PokemonDeAgua(String nome, int hp, int cp) {
-        super(nome, hp, cp);
+    public PokemonDeAgua(String nome, int hp, int cp, int ataque, int defesa) {
+        super(nome, hp, cp, ataque, defesa);
     }
     
     @Override
@@ -33,7 +33,7 @@ public class PokemonDeAgua extends Pokemon  {
     
     @Override
     public String toString(){
-    return "Pokemon de Água " + " Hp: " + getHp() + " Cp: " + getCp() + " Tipo: " + getTipo();
+    return "Pokemon de Água " + " Hp: " + getHp() + " Cp: " + getCp() + " Ataque: " + getAtaque() + "Defesa: " + getDefesa() ;
     }
 
     @Override

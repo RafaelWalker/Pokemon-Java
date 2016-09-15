@@ -14,15 +14,15 @@ public abstract class Pokemon implements PokemonAction{
     private final String nome;
     private int hp;
     private final int cp;
-    private final int poderAtaque;
-    private String tipo;
+    private final int ataque;
+    private final int defesa;
 
-    public Pokemon(String nome, int hp, int cp) {
+    public Pokemon(String nome, int hp, int cp, int ataque, int defesa) {
         this.nome = nome;
         setHp(hp);
         this.cp = cp;
-        this.tipo = tipo;
-        this.poderAtaque = calculaPoderAtaque();
+        this.ataque = ataque;
+        this.defesa = defesa;
         
     }
     
@@ -30,9 +30,15 @@ public abstract class Pokemon implements PokemonAction{
         return nome;
     }
 
-//    public void setNome(String nome) {
-//        this.nome = nome;
-//    }
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public int getDefesa() {
+        return defesa;
+    }
+
+
 
     public int getHp() {
         return hp;
@@ -46,31 +52,13 @@ public abstract class Pokemon implements PokemonAction{
         return cp;
     }
 
-//    public void setCp(int cp) {
-//        this.cp = cp;
-//    }
 
-    public int getPoderAtaque() {
-        return poderAtaque;
-    }
-
-//    public void setPoderAtaque(int poderAtaque) {
-//        this.poderAtaque = poderAtaque;
-//    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-//    public void setTipo(String tipo) {
-//        this.tipo = tipo;
-//    }
         
     public abstract int calculaPoderAtaque();
 
     @Override
     public String toString() {
-        return "Pokemon{" + "nome=" + nome + ", hp=" + hp + ", cp=" + cp + ", poderAtaque=" + poderAtaque + ", tipo=" + tipo + '}';
+        return "Pokemon{" + "nome=" + nome + ", hp=" + hp + ", cp=" + cp + ", Ataque=" + ataque + ", Defesa=" + defesa + '}';
     }
 
 }

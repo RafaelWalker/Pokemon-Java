@@ -6,8 +6,8 @@ package pokemon;
  */
 public class PokemonEletrico extends Pokemon{
     
-    public PokemonEletrico(String nome, int hp, int cp) {
-        super(nome, hp, cp);
+    public PokemonEletrico(String nome, int hp, int cp, int ataque, int defesa) {
+        super(nome, hp, cp, ataque, defesa);
     }
 
     
@@ -33,7 +33,7 @@ public class PokemonEletrico extends Pokemon{
     
     @Override
     public String toString(){
-    return "Pokemon Elétrico " + " Hp: " + getHp() + " Cp: " + getCp() + " Tipo: " + getTipo();
+    return "Pokemon de Elétrico " + " Hp: " + getHp() + " Cp: " + getCp() + " Ataque: " + getAtaque() + "Defesa: " + getDefesa() ;
     }
 
     @Override

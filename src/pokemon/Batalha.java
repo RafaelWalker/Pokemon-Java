@@ -11,8 +11,8 @@ package pokemon;
  */
 public class Batalha extends Pokemon implements PokemonAction {
 
-    public Batalha(String nome, int hp, int cp) {
-        super(nome, hp, cp);
+    public Batalha(String nome, int hp, int cp, int ataque, int defesa) {
+        super(nome, hp, cp, ataque, defesa);
     }
     
 
