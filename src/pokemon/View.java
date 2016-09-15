@@ -1,18 +1,16 @@
 package pokemon;
 
 import Utilidade.Util;
-import java.time.LocalDate;
 
-public class View  {
-
-    
-
-  
+public class View {
+   
 
     public void menu() {
 
         int opcao = 0;
+        
         do {
+            
             System.out.println("########### Pokemon ############");
             System.out.println("     Escolha o Seu Pokemon!     ");
             System.out.println("--------------------------------");
@@ -49,7 +47,10 @@ public class View  {
     }
 }     
 
-   
+   private void pokemonAgua(){
+       
+   }
+
    
     
 
