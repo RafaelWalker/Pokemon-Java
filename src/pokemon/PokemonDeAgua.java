@@ -9,7 +9,7 @@ public class PokemonDeAgua extends Pokemon  {
     public PokemonDeAgua(String nome, int hp, int cp, int ataque, int defesa) {
         super(nome, hp, cp, ataque, defesa);
     }
-    
+
     @Override
     public String ataque(){
         return getNome() + " Pokemon de Fogo Agua!!";

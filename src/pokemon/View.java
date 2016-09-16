@@ -4,6 +4,7 @@ import Utilidade.Util;
 
 public class View {
    
+    Pokemon pokemon;
 
     public void menu() {
 
@@ -39,17 +40,38 @@ public class View {
                     default:
                         System.out.println("Opção Inválida!");
                 }
+                
             } catch (Exception e){
 
                 System.out.println(e.getMessage());
             } 
         } while (opcao != 0);
     }
-}     
-
-   private void pokemonAgua(){
+    
+    private void pokemonAgua(){
        
    }
+    
+    private void pokemoFogo(){
+    
+    }
+    
+    private void pokemonTerra(){
+    
+    }
+    
+    private void pokemonEletrico(){
+    
+    }
+    
+    private void treinar(){
+    
+    }
+    
+   
+}     
+
+   
 
    
     
