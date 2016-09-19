@@ -18,14 +18,6 @@ public class PokemonDeAgua extends Pokemon implements PokemonAction {
         return ataque;
     }
     
-    @Override
-    public void setHp(int hp){
-        if (hp >= 80 & hp <= 100) {
-            setHp(hp);
-        } else {
-            throw new ArithmeticException("Número fora do Intervalo!");
-        }
-    }
 
     @Override
     public void atacar() {

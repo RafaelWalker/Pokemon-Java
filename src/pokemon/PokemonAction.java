@@ -14,6 +14,7 @@ public interface PokemonAction {
    void atacar();
    void defender();
    void esquivar();
+   int calculaPoderAtaque();
    
     
     

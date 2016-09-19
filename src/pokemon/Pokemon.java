@@ -14,8 +14,8 @@ public abstract class Pokemon implements PokemonAction{
 
     public Pokemon(String nome, int hp, int cp, int ataque, int defesa) {
         this.nome = nome;
-        setHp(hp);
-        this.cp = cp;
+        this.hp = 100;
+        this.cp = 100;
         this.ataque = ataque;
         this.defesa = defesa;
         
@@ -46,13 +46,6 @@ public abstract class Pokemon implements PokemonAction{
     }
 
 
-        
-    public abstract int calculaPoderAtaque();
-
-    @Override
-    public String toString() {
-        return "Pokemon{" + "nome=" + nome + ", hp=" + hp + ", cp=" + cp + ", Ataque=" + ataque + ", Defesa=" + defesa + '}';
-    }
 
 }
 

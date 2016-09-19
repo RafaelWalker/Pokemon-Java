@@ -18,15 +18,7 @@ public class PokemonDeTerra extends Pokemon{
         return ataque;
     }
     
-    @Override
-    public void setHp(int hp){
-        if (hp > 120 & hp <= 150) {
-            setHp(hp);
-        } else {
-            throw new ArithmeticException("Número fora do Intervalo!");
-        }
-    }
-
+    
     @Override
     public void atacar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

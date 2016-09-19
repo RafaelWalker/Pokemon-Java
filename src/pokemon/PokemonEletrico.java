@@ -18,14 +18,6 @@ public class PokemonEletrico extends Pokemon{
         return ataque;
     }
     
-    @Override
-    public void setHp(int hp){
-        if (hp > 80 & hp <= 120) {
-            setHp(hp);
-        } else {
-            throw new ArithmeticException("Número fora do Intervalo!");
-        }
-    }
 
     @Override
     public void atacar() {

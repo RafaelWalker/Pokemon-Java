@@ -1,6 +1,7 @@
 package pokemon;
 
 import Utilidade.Util;
+import java.util.Random;
 
 public class View {
    
@@ -66,6 +67,11 @@ public class View {
     
     private void treinar(){
     
+    }
+    
+    private Random random(){
+        Random r = new Random();
+        return r;
     }
     
    
