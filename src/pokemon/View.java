@@ -29,6 +29,7 @@ public class View {
                 opcao = Util.leInteiro("Escolha uma opção: ");
                 switch (opcao) {
                     case 1:
+                        
                         break;
                     case 2:
                         break;
@@ -50,28 +51,29 @@ public class View {
     }
     
     private void pokemonAgua(){
-       
+       pokemon = new PokemonDeAgua("", 3,3,3,3);
    }
     
     private void pokemoFogo(){
-    
+      pokemon = new PokemonDeFogo("", 3,3,3,3);
     }
     
     private void pokemonTerra(){
-    
+      pokemon = new PokemonDeTerra("", 3,3,3,3);
     }
     
     private void pokemonEletrico(){
-    
+      pokemon = new PokemonEletrico("", 3,3,3,3);
     }
     
     private void treinar(){
-    
+        
     }
     
-    private Random random(){
+    private int random(){
         Random r = new Random();
-        return r;
+        int num = r.nextInt(4);
+        return num+1;
     }
     
    
