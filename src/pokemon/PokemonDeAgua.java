@@ -4,16 +4,12 @@ package pokemon;
  *
  * @author Rafael Walker
  */
-public class PokemonDeAgua extends Pokemon  {
+public class PokemonDeAgua extends Pokemon implements PokemonAction {
 
     public PokemonDeAgua(String nome, int hp, int cp, int ataque, int defesa) {
         super(nome, hp, cp, ataque, defesa);
     }
 
-    @Override
-    public String ataque(){
-        return getNome() + " Pokemon de Fogo Agua!!";
-    }
     
     @Override
     public int calculaPoderAtaque(){
@@ -30,14 +26,21 @@ public class PokemonDeAgua extends Pokemon  {
             throw new ArithmeticException("Número fora do Intervalo!");
         }
     }
-    
+
     @Override
-    public String toString(){
-    return "Pokemon de Água " + " Hp: " + getHp() + " Cp: " + getCp() + " Ataque: " + getAtaque() + "Defesa: " + getDefesa() ;
+    public void atacar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public String defender(){
-        return "";
+    public void defender() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void esquivar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }

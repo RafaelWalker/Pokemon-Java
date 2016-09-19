@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pokemon;
 
 /**
@@ -37,8 +32,6 @@ public abstract class Pokemon implements PokemonAction{
     public int getDefesa() {
         return defesa;
     }
-
-
 
     public int getHp() {
         return hp;

@@ -11,10 +11,6 @@ public class PokemonEletrico extends Pokemon{
     }
 
     
-    public String ataque(){
-        return getNome() + " Pokemon Elétrico!!";
-    }
-    
     @Override
     public int calculaPoderAtaque(){
         int ataque;
@@ -30,14 +26,21 @@ public class PokemonEletrico extends Pokemon{
             throw new ArithmeticException("Número fora do Intervalo!");
         }
     }
-    
+
     @Override
-    public String toString(){
-    return "Pokemon de Elétrico " + " Hp: " + getHp() + " Cp: " + getCp() + " Ataque: " + getAtaque() + "Defesa: " + getDefesa() ;
+    public void atacar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public String defender() {
+    public void defender() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void esquivar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }
