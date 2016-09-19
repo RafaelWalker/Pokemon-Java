@@ -8,6 +8,7 @@ package Utilidade;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -33,6 +34,12 @@ public class Util {
         x = in.nextLine();
         
         return x;
+    }
+    
+    public static int random(int x) {
+        Random r = new Random();
+        int num = r.nextInt(x);
+        return num+1;
     }
 
     /**

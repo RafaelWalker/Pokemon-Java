@@ -12,7 +12,7 @@ public class View {
         int opcao = 0;
         
         do {
-            
+            Util.random(3);
             System.out.println("############ Pokemon ############");
             System.out.println("     Escolha o Seu Pokemon!      ");
             System.out.println(" O Seu Adversário será Sorteado! ");
