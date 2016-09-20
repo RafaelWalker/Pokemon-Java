@@ -17,13 +17,13 @@ public class View {
             System.out.println("     Escolha o Seu Pokemon!      ");
             System.out.println(" O Seu Adversário será Sorteado! ");
             System.out.println("---------------------------------");
-            System.out.println("1. Pokemon de Água               ");
-            System.out.println("2. Pokemon de Fogo               ");
-            System.out.println("3. Pokemon de Terra              ");
-            System.out.println("4. Pokemon de Eletricidade       ");
-            System.out.println("5. Treinar                       ");
-            System.out.println("6. Mostrar Status                ");
-            System.out.println("0. Para Sair                     ");
+            System.out.println(" 1. Pokemon de Água              ");
+            System.out.println(" 2. Pokemon de Fogo              ");
+            System.out.println(" 3. Pokemon de Terra             ");
+            System.out.println(" 4. Pokemon de Eletricidade      ");
+            System.out.println(" 5. Treinar                      ");
+            System.out.println(" 6. Mostrar Status               ");
+            System.out.println(" 0. Para Sair                    ");
             System.out.println("---------------------------------");
             
             try {
@@ -68,7 +68,7 @@ public class View {
     }
     
     private void treinar(){
-        
+      
     }
     
     private int random(){
