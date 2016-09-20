@@ -41,6 +41,11 @@ public class Util {
         int num = r.nextInt(x);
         return num+1;
     }
+    
+    public static long contadorDeTempo(long tempo) {
+        return System.currentTimeMillis()+tempo*1000*60;
+    }
+ 
 
     /**
      *
