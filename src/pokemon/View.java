@@ -10,6 +10,8 @@ public class View {
     public void menu() {
 
         int opcao = 0;
+        int sorteado = 0;
+        
         
         do {
             Util.random(3);
@@ -28,8 +30,12 @@ public class View {
             
             try {
                 opcao = Util.leInteiro("Escolha uma opção: ");
+                do {
+                    sorteado = Util.random(4);
+                }while(opcao==sorteado);
+                
                 switch (opcao) {
-                    case 1:
+                    case 1: 
                         
                         break;
                     case 2:
