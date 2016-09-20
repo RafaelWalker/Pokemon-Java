@@ -43,10 +43,27 @@ public class Util {
     }
     
     public static long contadorDeTempo(long tempo) {
-        return System.currentTimeMillis()+tempo*1000;
+        return System.currentTimeMillis()+tempo*1000*60;
     }
- 
-
+    
+    public static int valida(int valor){
+        if(valor>100){
+            valor = 100;
+        }else if(valor<0){
+            valor = 0;
+        }
+        return valor;
+    } 
+    
+    public static int valida(int valor, int limite){
+        if (valor>limite){
+            valor = limite;
+        }else if(valor<1){
+            valor = 1;
+        }
+        return valor;
+    }
+    
     /**
      *
      * @param mensagem

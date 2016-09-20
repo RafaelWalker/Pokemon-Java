@@ -14,7 +14,6 @@ public class View {
         
         
         do {
-            Util.random(3);
             System.out.println("############ Pokemon ############");
             System.out.println("     Escolha o Seu Pokemon!      ");
             System.out.println(" O Seu Adversário será Sorteado! ");
@@ -36,6 +35,7 @@ public class View {
                 
                 switch (opcao) {
                     case 1: 
+                        pokemonAgua();
                         
                         break;
                     case 2:
@@ -58,31 +58,26 @@ public class View {
     }
     
     private void pokemonAgua(){
-       pokemon = new PokemonDeAgua("", 3,3,3,3);
-   }
+        pokemon = new PokemonDeAgua("Squirtle", 3,3,3,3,3,3,3);
+    }
     
     private void pokemoFogo(){
-      pokemon = new PokemonDeFogo("", 3,3,3,3);
+      pokemon = new PokemonDeFogo("", 3,3,3,3,3,3,3);
     }
     
     private void pokemonTerra(){
-      pokemon = new PokemonDeTerra("", 3,3,3,3);
+      pokemon = new PokemonDeTerra("", 3,3,3,3,3,3,3);
     }
     
     private void pokemonEletrico(){
-      pokemon = new PokemonEletrico("", 3,3,3,3);
+      pokemon = new PokemonEletrico("", 3,3,3,3,3,3,3);
     }
     
     private void treinar(){
       
     }
     
-    private int random(){
-        Random r = new Random();
-        int num = r.nextInt(4);
-        return num+1;
-    }
-    
+       
    
 }     
 
