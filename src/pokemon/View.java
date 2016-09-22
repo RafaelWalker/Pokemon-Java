@@ -105,7 +105,11 @@ public class View {
         System.out.println("Energia: "+pokemon.getEnergia());
     }
     
-    
+    public void enviaPokemon(){
+        Pokemon p1 = pokemon;
+        Pokemon p2 = aleatorio;
+        
+    }
     
     
     
