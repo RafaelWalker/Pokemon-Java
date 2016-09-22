@@ -6,7 +6,8 @@ import java.util.Random;
 public class View {
    
     Pokemon pokemon;
-
+    Pokemon aleatorio;
+    
     public void menu() {
 
         int opcao = 0;
