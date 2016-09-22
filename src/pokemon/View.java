@@ -1,18 +1,18 @@
 package pokemon;
 
 import Utilidade.Util;
-import java.util.Random;
 
 public class View {
    
     Pokemon pokemon;
     Pokemon aleatorio;
-    
+
     public void menu() {
 
         int opcao = 0;
         int sorteado = 0;
         
+                
         
         do {
             System.out.println("############ Pokemon ############");
@@ -23,27 +23,33 @@ public class View {
             System.out.println(" 2. Pokemon de Fogo              ");
             System.out.println(" 3. Pokemon de Terra             ");
             System.out.println(" 4. Pokemon de Eletricidade      ");
-            System.out.println(" 5. Treinar                      ");
-            System.out.println(" 6. Mostrar Status               ");
+            System.out.println(" 5. Mostrar Status               ");
+            System.out.println(" 6. Treinar                      ");
+            System.out.println(" 7. Ir para a Batalha            ");
             System.out.println(" 0. Para Sair                    ");
             System.out.println("---------------------------------");
+                
             
             try {
                 opcao = Util.leInteiro("Escolha uma opção: ");
-                do {
-                    sorteado = Util.random(4);
-                }while(opcao==sorteado);
-                
+                            
                 switch (opcao) {
-                    case 1: 
-                        pokemonAgua();
-                        
-                        break;
+                    case 1:
                     case 2:
-                        break;
                     case 3:
-                        break;
                     case 4:
+                        pokemon = seleciona(opcao);
+                        do {
+                            sorteado = Util.random(4);
+                        }while(opcao==sorteado);
+                        aleatorio = seleciona(opcao);
+                        break;
+                    case 5:
+                        mostrarStatus(pokemon);
+                        break;
+                    case 6:
+                        break;
+                    case 7:
                         break;
                     case 0:
                         break;
@@ -58,28 +64,41 @@ public class View {
         } while (opcao != 0);
     }
     
-    private void pokemonAgua(){
-        pokemon = new PokemonDeAgua("Squirtle", 3,3,3,3,3,3,3);
-    }
-    
-    private void pokemoFogo(){
-      pokemon = new PokemonDeFogo("", 3,3,3,3,3,3,3);
-    }
-    
-    private void pokemonTerra(){
-      pokemon = new PokemonDeTerra("", 3,3,3,3,3,3,3);
-    }
-    
-    private void pokemonEletrico(){
-      pokemon = new PokemonEletrico("", 3,3,3,3,3,3,3);
-    }
+
     
     private void treinar(){
       
     }
     
-       
-   
+    public void mostrarStatus(Pokemon p) {
+        System.out.println("\nNome: "+p.getNome());
+        System.out.println("HP: "+p.getHp());
+        System.out.println("CP: "+p.getCp());
+        System.out.println("Ataque: "+p.getAtaque());
+        System.out.println("Defesa: "+p.getDefesa());
+        System.out.println("Velocidade: "+p.getVelocidade());
+        System.out.println("Energia: "+p.getEnergia());
+    }
+    
+    private Pokemon seleciona(int op)  {
+        Pokemon p = null;
+        switch(op) {
+            case 1:
+                p = new PokemonDeAgua("Squirtle", 3,3,3,3,3);
+                break;
+            case 2:
+                p = new PokemonDeFogo("Charmander", 4,4,4,4,4);
+                break;
+            case 3:
+                p = new PokemonDeTerra("Sandshrew", 5,5,5,5,5);
+                break;
+            case 4: 
+                p = new PokemonEletrico("Pikachu", 2,2,2,2,2);
+        }
+        return p;
+    }
+    
+    
 }     
 
    

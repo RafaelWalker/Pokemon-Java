@@ -9,24 +9,22 @@ import Utilidade.Util;
 public abstract class Pokemon implements PokemonAction{
 
     private String nome;
-    private int hp;
+    private final int hp;
     private int cp;
     private int ataque;
     private int defesa;
     private int velocidade;
     private int energia;
-    private int nivel;
-
-    public Pokemon(String nome, int hp, int cp, int ataque, int defesa, 
-            int velocidade, int energia, int nivel) {
+    
+    public Pokemon(String nome, int cp, int ataque, int defesa, 
+            int velocidade, int energia) {
         setNome(nome);
-        setHp(hp);
         setCp(cp);
         setAtaque(ataque);
         setDefesa(defesa);
         setVelocidade(velocidade,5);
         setEnergia(energia);
-        setNivel(nivel,3);
+        this.hp = 100;
     }
 
     public String getNome() {
@@ -41,10 +39,6 @@ public abstract class Pokemon implements PokemonAction{
 
     public int getHp() {
         return hp;
-    }
-
-    public void setHp(int hp) {
-        this.hp = Util.valida(hp);
     }
 
     public int getCp() {
@@ -93,20 +87,9 @@ public abstract class Pokemon implements PokemonAction{
         this.energia = Util.valida(energia);
     }
 
-    public int getNivel() {
-        return nivel;
-    }
+   
 
-    /**
-     *
-     * @param nivel
-     * @param limite = 3
-     * Niveis de velocidade (1 a 3)
-     */
-    public void setNivel(int nivel, int limite) {
-        this.nivel = Util.valida(nivel, limite);
-    }
-
+   
     
     
 }

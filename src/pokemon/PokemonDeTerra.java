@@ -6,9 +6,9 @@ package pokemon;
  */
 public class PokemonDeTerra extends Pokemon{
     
-    public PokemonDeTerra(String nome, int hp, int cp, int ataque, int defesa, 
-            int velocidade, int energia, int nivel) {
-        super(nome, hp, cp, ataque, defesa, velocidade, energia, nivel);
+    public PokemonDeTerra(String nome, int cp, int ataque, int defesa, 
+            int velocidade, int energia) {
+        super(nome, cp, ataque, defesa, velocidade, energia);
     }
     
     
