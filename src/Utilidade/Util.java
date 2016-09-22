@@ -43,7 +43,7 @@ public class Util {
     }
     
     public static long contadorDeTempo(long tempo) {
-        return System.currentTimeMillis()+tempo*1000*60;
+        return System.currentTimeMillis()+tempo*1000;
     }
     
     public static int valida(int valor){
