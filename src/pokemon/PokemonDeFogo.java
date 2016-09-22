@@ -7,8 +7,8 @@ package pokemon;
 public class PokemonDeFogo extends Pokemon{
 
     public PokemonDeFogo(String nome, int cp, int ataque, int defesa, 
-            int velocidade, int energia) {
-        super(nome, cp, ataque, defesa, velocidade, energia);
+            int velocidade) {
+        super(nome, cp, ataque, defesa, velocidade);
     }
     
     public String ataque(){

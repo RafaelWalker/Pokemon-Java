@@ -7,8 +7,8 @@ package pokemon;
 public class PokemonDeAgua extends Pokemon implements PokemonAction {
 
     public PokemonDeAgua(String nome, int cp, int ataque, int defesa, 
-            int velocidade, int energia) {
-        super(nome, cp, ataque, defesa, velocidade, energia);
+            int velocidade) {
+        super(nome, cp, ataque, defesa, velocidade);
     }
 
     

@@ -9,7 +9,7 @@ import Utilidade.Util;
 public abstract class Pokemon implements PokemonAction{
 
     private String nome;
-    private final int hp;
+    private int hp;
     private int cp;
     private int ataque;
     private int defesa;
@@ -17,14 +17,14 @@ public abstract class Pokemon implements PokemonAction{
     private int energia;
     
     public Pokemon(String nome, int cp, int ataque, int defesa, 
-            int velocidade, int energia) {
+            int velocidade) {
         setNome(nome);
         setCp(cp);
         setAtaque(ataque);
         setDefesa(defesa);
         setVelocidade(velocidade,5);
-        setEnergia(energia);
         this.hp = 100;
+        this.energia = 0;
     }
 
     public String getNome() {
@@ -87,7 +87,7 @@ public abstract class Pokemon implements PokemonAction{
         this.energia = Util.valida(energia);
     }
 
-   
+    
 
    
     

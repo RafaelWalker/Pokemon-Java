@@ -42,14 +42,16 @@ public class View {
                         do {
                             sorteado = Util.random(4);
                         }while(opcao==sorteado);
-                        aleatorio = seleciona(opcao);
+                        aleatorio = seleciona(sorteado);
                         break;
                     case 5:
-                        mostrarStatus(pokemon);
+                        //pokemon.mostrarStatus();
                         break;
                     case 6:
+                        treinar();
                         break;
                     case 7:
+                        
                         break;
                     case 0:
                         break;
@@ -70,33 +72,42 @@ public class View {
       
     }
     
-    public void mostrarStatus(Pokemon p) {
-        System.out.println("\nNome: "+p.getNome());
-        System.out.println("HP: "+p.getHp());
-        System.out.println("CP: "+p.getCp());
-        System.out.println("Ataque: "+p.getAtaque());
-        System.out.println("Defesa: "+p.getDefesa());
-        System.out.println("Velocidade: "+p.getVelocidade());
-        System.out.println("Energia: "+p.getEnergia());
-    }
-    
     private Pokemon seleciona(int op)  {
         Pokemon p = null;
+        int cp = Util.random(100);
+        int ataque = Util.random(100);
+        int defesa = Util.random(100);
+        int velocidade = Util.random(5);
+                
         switch(op) {
             case 1:
-                p = new PokemonDeAgua("Squirtle", 3,3,3,3,3);
+                p = new PokemonDeAgua("Squirtle", cp,ataque,defesa,velocidade);
                 break;
             case 2:
-                p = new PokemonDeFogo("Charmander", 4,4,4,4,4);
+                p = new PokemonDeFogo("Charmander",cp,ataque,defesa,velocidade);
                 break;
             case 3:
-                p = new PokemonDeTerra("Sandshrew", 5,5,5,5,5);
+                p = new PokemonDeTerra("Sandshrew", cp,ataque,defesa,velocidade);
                 break;
             case 4: 
-                p = new PokemonEletrico("Pikachu", 2,2,2,2,2);
+                p = new PokemonEletrico("Pikachu", cp,ataque,defesa,velocidade);
         }
         return p;
     }
+    
+    public void mostrarStatus(){
+        System.out.println("Nome: "+pokemon.getNome());
+        System.out.println("HP: "+pokemon.getHp());
+        System.out.println("CP: "+pokemon.getCp());
+        System.out.println("Ataque: "+pokemon.getAtaque());
+        System.out.println("Defesa: "+pokemon.getDefesa());
+        System.out.println("Velocidade: "+pokemon.getVelocidade());
+        System.out.println("Energia: "+pokemon.getEnergia());
+    }
+    
+    
+    
+    
     
     
 }     
