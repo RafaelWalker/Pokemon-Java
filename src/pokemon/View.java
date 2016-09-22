@@ -45,7 +45,7 @@ public class View {
                         aleatorio = seleciona(sorteado);
                         break;
                     case 5:
-                        //pokemon.mostrarStatus();
+                        mostrarStatus();
                         break;
                     case 6:
                         treinar();
