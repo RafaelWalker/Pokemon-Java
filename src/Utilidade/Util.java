@@ -80,6 +80,11 @@ public class Util {
             throw new Exception("Formato inválido para Data. Favor usar dd/MM/YYYY");
         }
     }
+    
+    public static void imprime(String mensagem) {
+        System.out.print(mensagem+"\n");
+        
+    }
 }
 
     

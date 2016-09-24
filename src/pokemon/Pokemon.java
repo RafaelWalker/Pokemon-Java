@@ -87,7 +87,23 @@ public abstract class Pokemon implements PokemonAction{
         this.energia = Util.valida(energia);
     }
 
-    
+    public void mostrarStatus( ) {
+        Util.imprime("Nome: "+getNome());
+        Util.imprime("HP: "+getHp());
+        Util.imprime("CP: "+getCp());
+        Util.imprime("Ataque: "+getAtaque());
+        Util.imprime("Defesa: "+getDefesa());
+        Util.imprime("Velocidade: "+getVelocidade());
+        Util.imprime("Kers+: "+getEnergia());
+    }
+
+    @Override
+    public String toString() {
+        return "Pokemon{" + "nome=" + nome + ", hp=" + hp + ", cp=" + cp
+                + ", ataque=" + ataque + ", defesa=" + defesa
+                + ", velocidade=" + velocidade + ", energia=" + energia + '}';
+    }
+
 
    
     

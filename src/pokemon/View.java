@@ -45,13 +45,14 @@ public class View {
                         aleatorio = seleciona(sorteado);
                         break;
                     case 5:
-                        mostrarStatus();
+                        pokemon.mostrarStatus();
                         break;
                     case 6:
                         treinar();
                         break;
                     case 7:
-                        
+                        Batalha b = new Batalha();
+                        b.combate(pokemon,aleatorio);
                         break;
                     case 0:
                         break;
@@ -94,23 +95,6 @@ public class View {
         }
         return p;
     }
-    
-    public void mostrarStatus(){
-        System.out.println("Nome: "+pokemon.getNome());
-        System.out.println("HP: "+pokemon.getHp());
-        System.out.println("CP: "+pokemon.getCp());
-        System.out.println("Ataque: "+pokemon.getAtaque());
-        System.out.println("Defesa: "+pokemon.getDefesa());
-        System.out.println("Velocidade: "+pokemon.getVelocidade());
-        System.out.println("Energia: "+pokemon.getEnergia());
-    }
-    
-    public void enviaPokemon(){
-        Pokemon p1 = pokemon;
-        Pokemon p2 = aleatorio;
-        
-    }
-    
     
     
     

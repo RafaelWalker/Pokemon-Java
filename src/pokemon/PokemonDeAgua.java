@@ -1,5 +1,7 @@
 package pokemon;
 
+import Utilidade.Util;
+
 /**
  *
  * @author Rafael Walker
@@ -14,25 +16,34 @@ public class PokemonDeAgua extends Pokemon implements PokemonAction {
     
     @Override
     public int calculaPoderAtaque(){
-        int ataque;
-        ataque = getCp() * 4;
-        return ataque;
+        return getCp()*getVelocidade();
     }
     
 
     @Override
-    public void atacar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int atacar() {
+        return getCp()*getVelocidade() + Util.random(getAtaque());
+    }
+    
+
+    @Override
+    public int defender() {
+        return getCp()*getVelocidade() + Util.random(getDefesa());
     }
 
     @Override
-    public void defender() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int esquivar() {
+        return getCp()*getVelocidade()+ 80;
     }
 
     @Override
-    public void esquivar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int calcularDefesa() {
+        return getCp()*getVelocidade();
+    }
+
+    @Override
+    public int superAtaque() {
+        return getCp()*getVelocidade()*10;
     }
     
     
