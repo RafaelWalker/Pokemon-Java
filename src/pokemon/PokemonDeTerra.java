@@ -12,40 +12,40 @@ public class PokemonDeTerra extends Pokemon{
             int velocidade) {
         super(nome, cp, ataque, defesa, velocidade);
     }
-    
-    
-    @Override
-    public int calculaPoderAtaque(){
-        return getCp()*getVelocidade();
-    }
-    
 
-    @Override
+@Override
     public int atacar() {
-        return getCp()*getVelocidade() + Util.random(getAtaque());
+        Util.imprime(getNome()+" ataca com Bloco de Pedra");
+        return getCp()*getVelocidade()+Util.random(getAtaque());
     }
-    
 
     @Override
     public int defender() {
-        return getCp()*getVelocidade() + Util.random(getDefesa());
+        Util.imprime(getNome()+" se defende com Muro de Castelo");
+        return getCp()*getVelocidade()+Util.random(getDefesa());
     }
 
     @Override
     public int esquivar() {
-        return getCp()*getVelocidade()+ 80;
-    }
-
-    @Override
-    public int calcularDefesa() {
-        return getCp()*getVelocidade();
+        Util.imprime(getNome()+" se esquiva com Desmoronamento e Contra-ataca");
+        return (int)(getCp()*getVelocidade()+Util.random((getDefesa()+getAtaque())/2));
     }
 
     @Override
     public int superAtaque() {
-        return getCp()*getVelocidade()*10;
+        Util.imprime(getNome()+" desfere Super Terremoto Escala 9");
+        return 10*getCp()*getVelocidade();
     }
-    
-    
+
+    @Override
+    public int calculaPoderAtaque() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int calculaDefesa() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }

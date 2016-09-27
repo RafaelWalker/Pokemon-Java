@@ -23,8 +23,8 @@ public abstract class Pokemon implements PokemonAction{
         setAtaque(ataque);
         setDefesa(defesa);
         setVelocidade(velocidade,5);
-        this.hp = 100;
-        this.energia = 0;
+        this.hp=100;
+        this.energia=0;
     }
 
     public String getNome() {
@@ -39,6 +39,14 @@ public abstract class Pokemon implements PokemonAction{
 
     public int getHp() {
         return hp;
+    }
+    
+    public void setHp(int hp) {
+        if (hp<0){
+            this.hp = 0;  
+        }else{
+            this.hp = hp;
+        }
     }
 
     public int getCp() {
@@ -94,8 +102,53 @@ public abstract class Pokemon implements PokemonAction{
         Util.imprime("Ataque: "+getAtaque());
         Util.imprime("Defesa: "+getDefesa());
         Util.imprime("Velocidade: "+getVelocidade());
-        Util.imprime("Kers+: "+getEnergia());
+        Util.imprime("Nível de Energia: "+getEnergia());
     }
+    
+    public void setar(int hp, int cp, int ataque, int defesa, int energia) {
+        if (hp>=0){
+            hp++;
+            setHp(getHp()+Util.random(Math.abs(hp)));
+        }else{
+            if (hp<0){
+                setHp(getHp()-Util.random(Math.abs(hp)));
+            }
+        }
+        
+        if (cp>=0){
+            cp++;
+            setCp(getCp()+Util.random(Math.abs(cp)));
+        }else{
+            if (cp<0){
+                setCp(getCp()-Util.random(Math.abs(cp)));
+            }
+        }
+        if (ataque>=0){
+            ataque++;
+            setAtaque(getAtaque()+Util.random(Math.abs(ataque)));
+        }else{
+            if (ataque<0){
+                setAtaque(getAtaque()-Util.random(Math.abs(1)));
+            }
+        }
+        if (defesa>=0){
+            defesa++;
+            setDefesa(getDefesa()+Util.random(Math.abs(defesa)));
+        }else{
+            if (defesa<0){
+                setDefesa(getDefesa()-Util.random(Math.abs(1)));
+            }
+        }
+        if (energia>=0){
+            energia++;
+            setEnergia(getEnergia()+Util.random(Math.abs(energia)));
+        }else{
+            if (energia<0){
+                setEnergia(getEnergia()-Util.random(Math.abs(1)));
+            }
+        }
+    }
+
 
     @Override
     public String toString() {
@@ -104,7 +157,7 @@ public abstract class Pokemon implements PokemonAction{
                 + ", velocidade=" + velocidade + ", energia=" + energia + '}';
     }
 
-
+    
    
     
     

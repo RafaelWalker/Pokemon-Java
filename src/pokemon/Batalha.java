@@ -13,9 +13,12 @@ public class Batalha {
         
     }
     
-    public Pokemon combate(Pokemon pokemon, Pokemon aleatorio){
-        long tempo = 0;
-        long limite = Util.contadorDeTempo(5); 
+    public Pokemon combate(Pokemon pokemon, Pokemon aleatorio) throws InterruptedException {
+        
+        long tempo;
+        long limite = Util.contadorDeTempo(120); 
+        Util.imprime("Começa a luta!");
+        
         do {
             int x = pokemon.getVelocidade();
             int y = aleatorio.getVelocidade();
@@ -23,34 +26,62 @@ public class Batalha {
             if (x>y) {
                 logicaBatalha(pokemon, aleatorio);
             }else{
-                if (y>x) {
-                    logicaBatalha(aleatorio, pokemon);
+                if (x<y) {
+                logicaBatalha(aleatorio, pokemon);
+                }else{
+                    Util.imprime("Os adversários se estudam.");
                 }
             }
-                        
+            
+            pokemon.setVelocidade(Util.random(5),5);
+            aleatorio.setVelocidade(Util.random(5),5);
             tempo = Util.contadorDeTempo(0);
-        }while(tempo<limite);
+            
+            
+            Util.imprime(pokemon.getNome()+"   HP: "+pokemon.getHp());
+            Thread.sleep(1500);
+            Util.imprime(aleatorio.getNome()+"   HP: "+aleatorio.getHp());
+            Thread.sleep(1500);
+        }while(tempo<limite && pokemon.getHp()>0 && aleatorio.getHp()>0);
         System.out.println("5 segundos");
         return pokemon;
     }
-
-    void logicaBatalha (Pokemon p, Pokemon q){
-        if (p.getEnergia()>=80){
-            p.superAtaque();
-        }else{
-            p.atacar();
-        }
-        if (q.getVelocidade()<4){
-            q.defender();
-        }else{
+    
+    void logicaBatalha (Pokemon p, Pokemon q) throws InterruptedException {
+    if ((p.getEnergia()>=80)&&(p.getVelocidade()>3)){
+        p.superAtaque();
+        p.setar(0,100,20,0,20);
+        q.setar(-50,-30,0,0,0);
+    }else{
+        p.atacar();
+        if(q.getVelocidade()>= 3){
             q.esquivar();
-            if (q.getEnergia()>= 80){
+            if(p.getEnergia()>=80){
                 q.superAtaque();
-            }else{
-                q.atacar();
-            }
+            q.setar(0,100,20,0,20);
+            p.setar(-50,-30,0,0,0);    
+        }else{
+            q.atacar();
             p.defender();
+                if(q.atacar()>p.defender()){
+                    q.setar(-10,10,10,0,20);
+                    p.setar(-10,-10,0,-10,-10);
+                }else{
+                    q.setar(-10,-10,-10,0,-10);
+                    p.setar(-10,10,0,10,20);
+                }  
+            }
+        }else{
+            q.defender();
+            if (p.atacar()>p.defender()){  
+                p.setar(-10,10,10,0,20);   
+                q.setar(-10,-10,0,-10,-10);
+            }else{ 
+                p.setar(-10,-10,-10,0,-10);       
+                q.setar(-10,10,0,10,20);
+            }
         }
+    }
     }
    
    

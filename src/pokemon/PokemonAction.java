@@ -14,9 +14,11 @@ public interface PokemonAction {
    int atacar();
    int defender();
    int esquivar();
-   int calculaPoderAtaque();
-   int calcularDefesa();
    int superAtaque();
+   int calculaPoderAtaque();
+   int calculaDefesa();
+   //int superAtaque();
+   
     
     
 }
