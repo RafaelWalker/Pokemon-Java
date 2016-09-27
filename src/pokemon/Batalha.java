@@ -40,9 +40,9 @@ public class Batalha  {
             
             
             Util.imprime(pokemon.getNome()+"   HP: "+pokemon.getHp());
-            Thread.sleep(1500);
+            Thread.sleep(2000);
             Util.imprime(aleatorio.getNome()+"   HP: "+aleatorio.getHp());
-            Thread.sleep(1500);
+            Thread.sleep(2000);
         }while(tempo<limite && pokemon.getHp()>0 && aleatorio.getHp()>0);
         System.out.println("5 segundos");
         return pokemon;
