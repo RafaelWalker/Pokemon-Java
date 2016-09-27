@@ -111,6 +111,7 @@ public abstract class Pokemon implements PokemonAction{
             setHp(getHp()+Util.random(Math.abs(hp)));
         }else{
             if (hp<0){
+                hp--;
                 setHp(getHp()-Util.random(Math.abs(hp)));
             }
         }
@@ -120,6 +121,7 @@ public abstract class Pokemon implements PokemonAction{
             setCp(getCp()+Util.random(Math.abs(cp)));
         }else{
             if (cp<0){
+                cp--;
                 setCp(getCp()-Util.random(Math.abs(cp)));
             }
         }
@@ -128,7 +130,8 @@ public abstract class Pokemon implements PokemonAction{
             setAtaque(getAtaque()+Util.random(Math.abs(ataque)));
         }else{
             if (ataque<0){
-                setAtaque(getAtaque()-Util.random(Math.abs(1)));
+                ataque--;
+                setAtaque(getAtaque()-Util.random(Math.abs(ataque)));
             }
         }
         if (defesa>=0){
@@ -136,7 +139,8 @@ public abstract class Pokemon implements PokemonAction{
             setDefesa(getDefesa()+Util.random(Math.abs(defesa)));
         }else{
             if (defesa<0){
-                setDefesa(getDefesa()-Util.random(Math.abs(1)));
+                defesa--;
+                setDefesa(getDefesa()-Util.random(Math.abs(defesa)));
             }
         }
         if (energia>=0){
@@ -144,7 +148,8 @@ public abstract class Pokemon implements PokemonAction{
             setEnergia(getEnergia()+Util.random(Math.abs(energia)));
         }else{
             if (energia<0){
-                setEnergia(getEnergia()-Util.random(Math.abs(1)));
+                energia--;
+                setEnergia(getEnergia()-Util.random(Math.abs(energia)));
             }
         }
     }

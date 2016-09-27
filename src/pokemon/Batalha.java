@@ -1,14 +1,15 @@
 package pokemon;
 
 import Utilidade.Util;
+import java.lang.*;
+
 
 /**
  *
  * @author Carlos Magno
  */
-public class Batalha {
+public class Batalha  {
     
-
     public Batalha(){
         
     }
@@ -50,7 +51,7 @@ public class Batalha {
     void logicaBatalha (Pokemon p, Pokemon q) throws InterruptedException {
     if ((p.getEnergia()>=80)&&(p.getVelocidade()>3)){
         p.superAtaque();
-        p.setar(0,100,20,0,20);
+        p.setar(0,100,20,0,-100);
         q.setar(-50,-30,0,0,0);
     }else{
         p.atacar();
@@ -58,7 +59,7 @@ public class Batalha {
             q.esquivar();
             if(p.getEnergia()>=80){
                 q.superAtaque();
-            q.setar(0,100,20,0,20);
+            q.setar(0,100,20,0,-100);
             p.setar(-50,-30,0,0,0);    
         }else{
             q.atacar();
@@ -83,7 +84,59 @@ public class Batalha {
         }
     }
     }
-   
-   
-    
 }
+     
+        
+    
+        
+        
+        /*    
+        if (p.getEnergia()>=80 && p.getVelocidade()>=4){
+            p.superAtaque();
+            p.setar(0,100,20,0,20);
+            q.setar(-50,-30,0,0,0);
+        }else{
+            p.atacar();
+            Thread.sleep(2000);
+            if (q.getVelocidade()<= 2){
+                q.defender();
+                Thread.sleep(2000);
+                if (p.atacar()>p.defender()){  
+                    p.setar(0,10,10,0,20);   
+                    q.setar(-10,-10,0,-10,-10);
+                }else{ 
+                    p.setar(0,-10,-10,0,-10);       
+                    q.setar(0,10,0,10,20);
+                }
+            }else{
+                q.esquivar();
+                Thread.sleep(2000);
+                if (q.getEnergia()>= 80&&q.getVelocidade()>=4){
+                    q.superAtaque();
+                    p.setar(0,100,20,0,20);
+                    q.setar(-50,-30,0,0,0);
+                }else{
+                    if (p.atacar()>q.esquivar()){
+                        p.setar(0,10,10,0,20);
+                        q.setar(-10,-10,0,-10,-10);
+                    }else{
+                        p.setar(0,-10,-10,0,-10);
+                        q.setar(0,10,0,10,20);
+                    }
+                    q.atacar();
+                    Thread.sleep(2000);
+                    p.defender();
+                    Thread.sleep(2000);
+                    if(q.atacar()>p.defender()){
+                        q.setar(0,10,10,0,20);
+                        p.setar(-10,-10,0,-10,-10);
+                    }else{
+                        q.setar(0,-10,-10,0,-10);
+                        p.setar(0,10,0,10,20);
+                    }   
+                }
+            }
+        }
+    }
+}
+*/

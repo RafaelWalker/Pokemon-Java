@@ -1,6 +1,8 @@
 package pokemon;
 
 import Utilidade.Util;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *

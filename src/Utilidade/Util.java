@@ -5,6 +5,7 @@
  */
 package Utilidade;
 
+import java.lang.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.InputMismatchException;
@@ -26,6 +27,12 @@ public class Util {
         return x;
     }
     
+    public static void imprime(String mensagem) {
+        System.out.print(mensagem+"\n");
+        
+    }
+    
+        
     public static String leString(String mensagem) {
         String x;
         
@@ -46,11 +53,12 @@ public class Util {
         return System.currentTimeMillis()+tempo*1000;
     }
     
+        
     public static int valida(int valor){
         if(valor>100){
             valor = 100;
         }else if(valor<0){
-            valor = 0;
+            valor = 1;
         }
         return valor;
     } 
@@ -79,11 +87,6 @@ public class Util {
         } catch (Exception ex) {
             throw new Exception("Formato inválido para Data. Favor usar dd/MM/YYYY");
         }
-    }
-    
-    public static void imprime(String mensagem) {
-        System.out.print(mensagem+"\n");
-        
     }
 }
 

@@ -7,6 +7,10 @@ package pokemon;
 public class Principal {
     public static void main(String[] args) {
         View view = new View();
-        view.menu();
+        view.menu(); 
     }
 }
+
+
+
+
