@@ -107,48 +107,48 @@ public abstract class Pokemon implements PokemonAction{
     
     public void setar(int hp, int cp, int ataque, int defesa, int energia) {
         if (hp>=0){
-            hp++;
+            hp+=2;
             setHp(getHp()+Util.random(Math.abs(hp)));
         }else{
             if (hp<0){
-                hp--;
+                hp-=2;
                 setHp(getHp()-Util.random(Math.abs(hp)));
             }
         }
         
         if (cp>=0){
-            cp++;
+            cp+=2;
             setCp(getCp()+Util.random(Math.abs(cp)));
         }else{
             if (cp<0){
-                cp--;
+                cp-=2;
                 setCp(getCp()-Util.random(Math.abs(cp)));
             }
         }
         if (ataque>=0){
-            ataque++;
+            ataque+=2;
             setAtaque(getAtaque()+Util.random(Math.abs(ataque)));
         }else{
             if (ataque<0){
-                ataque--;
+                ataque-=2;
                 setAtaque(getAtaque()-Util.random(Math.abs(ataque)));
             }
         }
         if (defesa>=0){
-            defesa++;
+            defesa+=2;
             setDefesa(getDefesa()+Util.random(Math.abs(defesa)));
         }else{
             if (defesa<0){
-                defesa--;
+                defesa-=2;
                 setDefesa(getDefesa()-Util.random(Math.abs(defesa)));
             }
         }
         if (energia>=0){
-            energia++;
+            energia+=2;
             setEnergia(getEnergia()+Util.random(Math.abs(energia)));
         }else{
             if (energia<0){
-                energia--;
+                energia-=2;
                 setEnergia(getEnergia()-Util.random(Math.abs(energia)));
             }
         }
