@@ -10,7 +10,9 @@ public class View {
     public void menu() {
 
         int opcao = 0;
-        int sorteado = 0;    
+        int sorteado = 0;
+        
+                
         
         do {
             System.out.println("############ Pokemon ############");
@@ -22,10 +24,12 @@ public class View {
             System.out.println(" 3. Pokemon de Terra             ");
             System.out.println(" 4. Pokemon de Eletricidade      ");
             System.out.println(" 5. Mostrar Status               ");
-            System.out.println(" 6. Ir para a Batalha            ");
+            System.out.println(" 6. Treinar                      ");
+            System.out.println(" 7. Ir para a Batalha            ");
             System.out.println(" 0. Para Sair                    ");
             System.out.println("---------------------------------");
                 
+            
             try {
                 opcao = Util.leInteiro("Escolha uma opção: ");
                             
@@ -43,12 +47,14 @@ public class View {
                         Thread.sleep(1400);
                         break;
                     case 5:
-                        pokemon.mostrarStatus();
+                        mostrarStatus();
                         break;
                     case 6:
+                        treinar();
+                        break;
+                    case 7:
                         combate();
                         break;
-                    
                     case 0:
                         break;
                     default:
@@ -62,6 +68,11 @@ public class View {
         } while (opcao != 0);
     }
     
+
+    
+    private void treinar(){
+      
+    }
     
     private Pokemon seleciona(int op)  {
         Pokemon p = null;
@@ -84,6 +95,16 @@ public class View {
                 p = new PokemonEletrico("Pikachu", cp,ataque,defesa,velocidade);
         }
         return p;
+    }
+    
+    public void mostrarStatus() {
+        System.out.println("Nome: "+pokemon.getNome());
+        System.out.println("HP: "+pokemon.getHp());
+        System.out.println("CP: "+pokemon.getCp());
+        System.out.println("Ataque: "+pokemon.getAtaque());
+        System.out.println("Defesa: "+pokemon.getDefesa());
+        System.out.println("Velocidade: "+pokemon.getVelocidade());
+        System.out.println("Nível de Energia: "+pokemon.getEnergia());
     }
 
     private void combate() throws InterruptedException {
@@ -114,9 +135,9 @@ public class View {
             
             
             System.out.println(pokemon.getNome()+"   HP: "+pokemon.getHp());
-            Thread.sleep(1000);
+            Thread.sleep(1500);
             System.out.println(aleatorio.getNome()+"   HP: "+aleatorio.getHp()+"\n");
-            Thread.sleep(1000);
+            Thread.sleep(1500);
         }while(tempo<limite && pokemon.getHp()>0 && aleatorio.getHp()>0);
         
         if (pokemon.getHp() > aleatorio.getHp()) {
@@ -127,7 +148,7 @@ public class View {
             } else {
                 System.out.println("Houve um Empate! \n");
             }
-        Thread.sleep(1200);
+        Thread.sleep(1400);
         }    
     }
     
