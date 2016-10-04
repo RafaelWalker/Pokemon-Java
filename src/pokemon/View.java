@@ -11,6 +11,7 @@ public class View {
 
         int opcao = 0;
         int sorteado = 0;
+        int c = 0;
         
                 
         
@@ -42,14 +43,25 @@ public class View {
                             sorteado = Util.random(4);
                         }while(opcao==sorteado);
                         aleatorio = seleciona(sorteado);
+                        c = 1;
                         System.out.println("\nPokemon selecionado!");
                         Thread.sleep(1400);
                         break;
                     case 5:
-                        mostrarStatus();
+                        if (c!=0){
+                            mostrarStatus();
+                        }else{
+                            System.out.println("}Selecione o Pokemon!");
+                            Thread.sleep(1500);
+                        }
                         break;
                     case 7:
-                        combate();
+                        if (c!=0){
+                            combate();
+                        }else{
+                            System.out.println("Selecione o Pokemon!");
+                            Thread.sleep(1500);
+                        }
                         break;
                     case 0:
                         break;
@@ -66,9 +78,7 @@ public class View {
     
 
     
-    private void treinar(){
-      
-    }
+    
     
     private Pokemon seleciona(int op)  {
         Pokemon p = null;
