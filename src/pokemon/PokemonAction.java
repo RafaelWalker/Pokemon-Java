@@ -11,13 +11,14 @@ package pokemon;
  */
 public interface PokemonAction {
     
-   int atacar();
-   int defender();
-   int esquivar();
-   int superAtaque();
+   String atacar();
+   String defender();
+   String esquivar();
+   String superAtaque();
    int calculaPoderAtaque();
    int calculaDefesa();
-   //int superAtaque();
+  
+   
    
     
     

@@ -43,6 +43,8 @@ public class View {
                             sorteado = Util.random(4);
                         }while(opcao==sorteado);
                         aleatorio = seleciona(sorteado);
+                        System.out.println("\nPokemon selecionado!");
+                        Thread.sleep(1400);
                         break;
                     case 5:
                         pokemon.mostrarStatus();
@@ -51,8 +53,7 @@ public class View {
                         treinar();
                         break;
                     case 7:
-                        Batalha b = new Batalha();
-                        b.combate(pokemon,aleatorio);
+                        combate();
                         break;
                     case 0:
                         break;
@@ -95,13 +96,58 @@ public class View {
         }
         return p;
     }
+
+    private void combate() throws InterruptedException {
+        long tempo;
+        long limite = Util.contadorDeTempo(120); 
+        System.out.println("Começa a luta! \n");
+        
+        do {
+            int x = pokemon.getVelocidade();
+            int y = aleatorio.getVelocidade();
+            
+            if (x>y) {
+                Batalha batalha = new Batalha(pokemon, aleatorio);
+                System.out.println(batalha.combate());
+                
+            }else{
+                if (x<y) {
+                    Batalha batalha = new Batalha(aleatorio, pokemon);
+                    System.out.println(batalha.combate());
+                }else{
+                    System.out.println("Os adversários se estudam. \n");
+                }
+            }
+            
+            pokemon.setVelocidade(Util.random(5),5);
+            aleatorio.setVelocidade(Util.random(5),5);
+            tempo = Util.contadorDeTempo(0);
+            
+            
+            System.out.println(pokemon.getNome()+"   HP: "+pokemon.getHp());
+            Thread.sleep(1500);
+            System.out.println(aleatorio.getNome()+"   HP: "+aleatorio.getHp()+"\n");
+            Thread.sleep(1500);
+        }while(tempo<limite && pokemon.getHp()>0 && aleatorio.getHp()>0);
+        
+        if (pokemon.getHp() > aleatorio.getHp()) {
+            System.out.println("Vencedor " + pokemon.getNome()+"!\n");
+        } else 
+            if (pokemon.getHp() < aleatorio.getHp()) {
+                System.out.println("Vencedor " + aleatorio.getNome()+"!\n");
+            } else {
+                System.out.println("Houve um Empate! \n");
+            }
+        Thread.sleep(1400);
+        }    
+    }
     
     
     
     
     
     
-}     
+   
 
    
 

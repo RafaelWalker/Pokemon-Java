@@ -16,37 +16,46 @@ public class PokemonEletrico extends Pokemon{
     }
 
     @Override
-    public int atacar() {
-        Util.imprime(getNome()+" desferiu o ataque Corrente ao Quadrado");
-        return getCp()*getVelocidade()+Util.random(getAtaque());
+    public String atacar() {
+        return getNome()+" desferiu o ataque Corrente ao Quadrado \n";
     }
 
     @Override
-    public int defender() {
-        Util.imprime(getNome()+" se defende com Arco Voltaico");
-        return getCp()*getVelocidade()+Util.random(getDefesa());
+    public String defender() {
+        return getNome()+" se defende com Arco Voltaico \n";
     }
 
     @Override
-    public int esquivar() {
-        Util.imprime(getNome()+" se esquiva e Contra-ataca");
-        return (int)(getCp()*getVelocidade()+Util.random((getDefesa()+getAtaque())/2));
+    public String esquivar() {
+        return getNome()+" se esquiva e Contra-ataca \n";
     }
 
     @Override
-    public int superAtaque() {
-        Util.imprime(getNome()+" desfere Super Raio Magnético");
-        return 10*getCp()*getVelocidade();
+    public String superAtaque() {
+        return getNome()+" desfere Super Raio Magnético \n";
     }
 
     @Override
     public int calculaPoderAtaque() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getCp()*getVelocidade()+Util.random(getAtaque());
     }
 
     @Override
     public int calculaDefesa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getCp()*getVelocidade()+Util.random(getDefesa());
+    }
+}
+
+    /*
+    @Override
+    public int calculaSuperAtaque() {
+        return 10*getCp()*getVelocidade();
+    }
+
+    @Override
+    public int calculaEsquiva() {
+        return (int)(getCp()*getVelocidade()+Util.random((getDefesa()+getAtaque())/2));
     }
 
 } 
+*/

@@ -106,6 +106,8 @@ public abstract class Pokemon implements PokemonAction{
     }
     
     public void setar(int hp, int cp, int ataque, int defesa, int energia) {
+        try {
+        
         if (hp>=0){
             hp+=2;
             setHp(getHp()+Util.random(Math.abs(hp)));
@@ -152,8 +154,11 @@ public abstract class Pokemon implements PokemonAction{
                 setEnergia(getEnergia()-Util.random(Math.abs(energia)));
             }
         }
-    }
-
+    }catch (Exception ex){
+            
+    } 
+}
+        
 
     @Override
     public String toString() {

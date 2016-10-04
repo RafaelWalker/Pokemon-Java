@@ -19,39 +19,48 @@ public class PokemonDeAgua extends Pokemon implements PokemonAction {
     }
 
     @Override
-    public int atacar() {
-        Util.imprime(getNome()+" desferiu o ataque Aqua Missil");
-        return getCp()*getVelocidade()+Util.random(getAtaque());
+    public String atacar() {
+        return getNome()+" desferiu o ataque Aqua Missil \n";
         
     }
 
     @Override
-    public int defender() {
-        Util.imprime(getNome()+" se defende com Redemoinho");
-        return getCp()*getVelocidade()+Util.random(getDefesa());
+    public String defender() {
+        return getNome()+" se defende com Redemoinho \n";
     }
 
     @Override
-    public int esquivar() {
-        Util.imprime(getNome()+" se esquiva com Mergulho e Contra-ataca");
-        return (int)(getCp()*getVelocidade()+Util.random((getDefesa()+getAtaque())/2));
+    public String esquivar() {
+        return getNome()+" se esquiva com Mergulho e Contra-ataca \n";
     }
 
     @Override
-    public int superAtaque() {
-        Util.imprime(getNome()+" desfere Super Jato Ataque");
-        return 10*getCp()*getVelocidade();
+    public String superAtaque() {
+        return getNome()+" desfere Super Jato Ataque \n";
     }
 
     @Override
     public int calculaPoderAtaque() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getCp()*getVelocidade()+Util.random(getAtaque());
     }
 
     @Override
     public int calculaDefesa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getCp()*getVelocidade()+Util.random(getDefesa());
+    }
+}
+
+/*
+    @Override
+    public int calculaSuperAtaque() {
+        return 10*getCp()*getVelocidade();
+    }
+
+    @Override
+    public int calculaEsquiva() {
+        return (int)(getCp()*getVelocidade()+Util.random((getDefesa()+getAtaque())/2));
     }
 
     
 }
+*/

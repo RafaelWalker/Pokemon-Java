@@ -16,39 +16,48 @@ public class PokemonDeFogo extends Pokemon{
     }
 
     @Override
-    public int atacar() {
-        Util.imprime(getNome()+" desferiu o ataque Tiro de Fogo");
+    public String atacar() {
+        return getNome()+" desferiu o ataque Tiro de Fogo \n";
+    }
+
+    @Override
+    public String defender() {
+        return getNome()+" se defende com Tempestade de Fogo \n";
+    }
+
+    @Override
+    public String esquivar() {
+        return getNome()+" se esquiva com Super Aquecimento \n";
+    }
+
+    @Override
+    public String superAtaque() {
+        return getNome()+" desfere Explosão Atômica \n";
+    }
+
+    
+    @Override
+    public int calculaPoderAtaque() {
         return getCp()*getVelocidade()+Util.random(getAtaque());
     }
 
     @Override
-    public int defender() {
-        Util.imprime(getNome()+" se defende com Tempestade de Fogo");
+    public int calculaDefesa() {
         return getCp()*getVelocidade()+Util.random(getDefesa());
     }
 
+ }
+/*
     @Override
-    public int esquivar() {
-        Util.imprime(getNome()+" se esquiva com Super Aquecimento");
-        return (int)(getCp()*getVelocidade()+Util.random((getDefesa()+getAtaque())/2));
-    }
-
-    @Override
-    public int superAtaque() {
-        Util.imprime(getNome()+" desfere Explosão Atômica");
+    public int calculaSuperAtaque() {
         return 10*getCp()*getVelocidade();
     }
 
+    @Override
+    public int calculaEsquiva() {
+        return (int)(getCp()*getVelocidade()+Util.random((getDefesa()+getAtaque())/2));
+    }
+
     
-
-    @Override
-    public int calculaPoderAtaque() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int calculaDefesa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
+*/
