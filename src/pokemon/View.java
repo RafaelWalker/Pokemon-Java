@@ -24,7 +24,6 @@ public class View {
             System.out.println(" 3. Pokemon de Terra             ");
             System.out.println(" 4. Pokemon de Eletricidade      ");
             System.out.println(" 5. Mostrar Status               ");
-            System.out.println(" 6. Treinar                      ");
             System.out.println(" 7. Ir para a Batalha            ");
             System.out.println(" 0. Para Sair                    ");
             System.out.println("---------------------------------");
@@ -48,9 +47,6 @@ public class View {
                         break;
                     case 5:
                         mostrarStatus();
-                        break;
-                    case 6:
-                        treinar();
                         break;
                     case 7:
                         combate();
