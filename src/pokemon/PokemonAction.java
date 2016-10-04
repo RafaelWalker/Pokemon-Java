@@ -18,8 +18,4 @@ public interface PokemonAction {
    int calculaPoderAtaque();
    int calculaDefesa();
   
-   
-   
-    
-    
 }

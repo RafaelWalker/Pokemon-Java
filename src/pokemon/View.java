@@ -10,9 +10,7 @@ public class View {
     public void menu() {
 
         int opcao = 0;
-        int sorteado = 0;
-        
-                
+        int sorteado = 0;    
         
         do {
             System.out.println("############ Pokemon ############");
@@ -24,12 +22,10 @@ public class View {
             System.out.println(" 3. Pokemon de Terra             ");
             System.out.println(" 4. Pokemon de Eletricidade      ");
             System.out.println(" 5. Mostrar Status               ");
-            System.out.println(" 6. Treinar                      ");
-            System.out.println(" 7. Ir para a Batalha            ");
+            System.out.println(" 6. Ir para a Batalha            ");
             System.out.println(" 0. Para Sair                    ");
             System.out.println("---------------------------------");
                 
-            
             try {
                 opcao = Util.leInteiro("Escolha uma opção: ");
                             
@@ -50,11 +46,9 @@ public class View {
                         pokemon.mostrarStatus();
                         break;
                     case 6:
-                        treinar();
-                        break;
-                    case 7:
                         combate();
                         break;
+                    
                     case 0:
                         break;
                     default:
@@ -68,11 +62,6 @@ public class View {
         } while (opcao != 0);
     }
     
-
-    
-    private void treinar(){
-      
-    }
     
     private Pokemon seleciona(int op)  {
         Pokemon p = null;
@@ -125,9 +114,9 @@ public class View {
             
             
             System.out.println(pokemon.getNome()+"   HP: "+pokemon.getHp());
-            Thread.sleep(1500);
+            Thread.sleep(1000);
             System.out.println(aleatorio.getNome()+"   HP: "+aleatorio.getHp()+"\n");
-            Thread.sleep(1500);
+            Thread.sleep(1000);
         }while(tempo<limite && pokemon.getHp()>0 && aleatorio.getHp()>0);
         
         if (pokemon.getHp() > aleatorio.getHp()) {
@@ -138,7 +127,7 @@ public class View {
             } else {
                 System.out.println("Houve um Empate! \n");
             }
-        Thread.sleep(1400);
+        Thread.sleep(1200);
         }    
     }
     
