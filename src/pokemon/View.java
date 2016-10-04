@@ -51,7 +51,7 @@ public class View {
                         if (c!=0){
                             mostrarStatus();
                         }else{
-                            System.out.println("}Selecione o Pokemon!");
+                            System.out.println("Selecione o Pokemon!");
                             Thread.sleep(1500);
                         }
                         break;
