@@ -44,8 +44,8 @@ public class View {
                         }while(opcao==sorteado);
                         aleatorio = seleciona(sorteado);
                         c = 1;
-                        System.out.println("\nPokemon selecionado!");
-                        Thread.sleep(1400);
+                        System.out.println("\nPokemon selecionado: "+pokemon.getNome());
+                        Thread.sleep(1500);
                         break;
                     case 5:
                         if (c!=0){
