@@ -10,12 +10,17 @@ package pokemon;
  * @author rafael
  */
 public interface PokemonAction {
-    
-   String atacar();
-   String defender();
-   String esquivar();
-   String superAtaque();
-   int calculaPoderAtaque();
-   int calculaDefesa();
-  
+
+    String atacar();
+
+    String defender();
+
+    String esquivar();
+
+    String superAtaque();
+
+    int calculaPoderAtaque();
+
+    int calculaDefesa();
+
 }

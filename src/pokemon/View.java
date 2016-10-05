@@ -3,7 +3,7 @@ package pokemon;
 import Utilidade.Util;
 
 public class View {
-   
+
     Pokemon pokemon;
     Pokemon aleatorio;
 
@@ -12,9 +12,7 @@ public class View {
         int opcao = 0;
         int sorteado = 0;
         int c = 0;
-        
-                
-        
+
         do {
             System.out.println("############ Pokemon ############");
             System.out.println("     Escolha o Seu Pokemon!      ");
@@ -28,11 +26,10 @@ public class View {
             System.out.println(" 7. Ir para a Batalha            ");
             System.out.println(" 0. Para Sair                    ");
             System.out.println("---------------------------------");
-                
-            
+
             try {
                 opcao = Util.leInteiro("Escolha uma opção: ");
-                            
+
                 switch (opcao) {
                     case 1:
                     case 2:
@@ -41,133 +38,118 @@ public class View {
                         pokemon = seleciona(opcao);
                         do {
                             sorteado = Util.random(4);
-                        }while(opcao==sorteado);
+                        } while (opcao == sorteado);
                         aleatorio = seleciona(sorteado);
                         c = 1;
-                        System.out.println("\nPokemon selecionado: "+pokemon.getNome());
+                        System.out.println("\nPokemon selecionado: " + pokemon.getNome());
                         Thread.sleep(1500);
                         break;
                     case 5:
-                        if (c!=0){
+                        if (c != 0) {
                             mostrarStatus();
-                        }else{
+                        } else {
                             System.out.println("Selecione o Pokemon!");
                             Thread.sleep(1500);
                         }
                         break;
                     case 7:
-                        if (c!=0){
+                        if (c != 0) {
                             combate();
-                        }else{
+                        } else {
                             System.out.println("Selecione o Pokemon!");
                             Thread.sleep(1500);
                         }
                         break;
                     case 0:
+                        System.out.println("-----------------------------------------");
+                        System.out.println("");
+                        System.out.println("Obrigado por Ultilizar o Nosso Simulador!");
+                        System.out.println("");
+                        System.out.println("-----------------------------------------");
                         break;
                     default:
                         System.out.println("Opção Inválida!");
                 }
-                
-            } catch (Exception e){
+
+            } catch (Exception e) {
 
                 System.out.println(e.getMessage());
-            } 
+            }
         } while (opcao != 0);
     }
-    
 
-    
-    
-    
-    private Pokemon seleciona(int op)  {
+    private Pokemon seleciona(int op) {
         Pokemon p = null;
         int cp = Util.random(100);
         int ataque = Util.random(100);
         int defesa = Util.random(100);
         int velocidade = Util.random(5);
-                
-        switch(op) {
+
+        switch (op) {
             case 1:
-                p = new PokemonDeAgua("Squirtle", cp,ataque,defesa,velocidade);
+                p = new PokemonDeAgua("Squirtle", cp, ataque, defesa, velocidade);
                 break;
             case 2:
-                p = new PokemonDeFogo("Charmander",cp,ataque,defesa,velocidade);
+                p = new PokemonDeFogo("Charmander", cp, ataque, defesa, velocidade);
                 break;
             case 3:
-                p = new PokemonDeTerra("Sandshrew", cp,ataque,defesa,velocidade);
+                p = new PokemonDeTerra("Sandshrew", cp, ataque, defesa, velocidade);
                 break;
-            case 4: 
-                p = new PokemonEletrico("Pikachu", cp,ataque,defesa,velocidade);
+            case 4:
+                p = new PokemonEletrico("Pikachu", cp, ataque, defesa, velocidade);
         }
         return p;
     }
-    
+
     public void mostrarStatus() {
-        System.out.println("Nome: "+pokemon.getNome());
-        System.out.println("HP: "+pokemon.getHp());
-        System.out.println("CP: "+pokemon.getCp());
-        System.out.println("Ataque: "+pokemon.getAtaque());
-        System.out.println("Defesa: "+pokemon.getDefesa());
-        System.out.println("Velocidade: "+pokemon.getVelocidade());
-        System.out.println("Nível de Energia: "+pokemon.getEnergia());
+        System.out.println("Nome: " + pokemon.getNome());
+        System.out.println("HP: " + pokemon.getHp());
+        System.out.println("CP: " + pokemon.getCp());
+        System.out.println("Ataque: " + pokemon.getAtaque());
+        System.out.println("Defesa: " + pokemon.getDefesa());
+        System.out.println("Velocidade: " + pokemon.getVelocidade());
+        System.out.println("Nível de Energia: " + pokemon.getEnergia());
     }
 
     private void combate() throws InterruptedException {
         long tempo;
-        long limite = Util.contadorDeTempo(120); 
+        long limite = Util.contadorDeTempo(120);
         System.out.println("Começa a luta! \n");
-        
+
         do {
             int x = pokemon.getVelocidade();
             int y = aleatorio.getVelocidade();
-            
-            if (x>y) {
+
+            if (x > y) {
                 Batalha batalha = new Batalha(pokemon, aleatorio);
                 System.out.println(batalha.combate());
-                
-            }else{
-                if (x<y) {
-                    Batalha batalha = new Batalha(aleatorio, pokemon);
-                    System.out.println(batalha.combate());
-                }else{
-                    System.out.println("Os adversários se estudam. \n");
-                }
+
+            } else if (x < y) {
+                Batalha batalha = new Batalha(aleatorio, pokemon);
+                System.out.println(batalha.combate());
+            } else {
+                System.out.println("Os adversários se estudam. \n");
             }
-            
-            pokemon.setVelocidade(Util.random(5),5);
-            aleatorio.setVelocidade(Util.random(5),5);
+
+            pokemon.setVelocidade(Util.random(5), 5);
+            aleatorio.setVelocidade(Util.random(5), 5);
             tempo = Util.contadorDeTempo(0);
-            
-            
-            System.out.println(pokemon.getNome()+"   HP: "+pokemon.getHp());
+
+            System.out.println(pokemon.getNome() + "   HP: " + pokemon.getHp());
             Thread.sleep(1500);
-            System.out.println(aleatorio.getNome()+"   HP: "+aleatorio.getHp()+"\n");
+            System.out.println(aleatorio.getNome() + "   HP: " + aleatorio.getHp() + "\n");
             Thread.sleep(1500);
-        }while(tempo<limite && pokemon.getHp()>0 && aleatorio.getHp()>0);
-        
+        } while (tempo < limite && pokemon.getHp() > 0 && aleatorio.getHp() > 0);
+
         if (pokemon.getHp() > aleatorio.getHp()) {
-            System.out.println("Vencedor " + pokemon.getNome()+"!\n");
-        } else 
+            System.out.println("Vencedor " + pokemon.getNome() + "!\n");
+        } else {
             if (pokemon.getHp() < aleatorio.getHp()) {
-                System.out.println("Vencedor " + aleatorio.getNome()+"!\n");
+                System.out.println("Vencedor " + aleatorio.getNome() + "!\n");
             } else {
                 System.out.println("Houve um Empate! \n");
             }
+        }
         Thread.sleep(1400);
-        }    
     }
-    
-    
-    
-    
-    
-    
-   
-
-   
-
-   
-    
-
- 
+}

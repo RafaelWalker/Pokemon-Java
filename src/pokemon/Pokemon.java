@@ -6,7 +6,7 @@ import Utilidade.Util;
  *
  * @author rafael
  */
-public abstract class Pokemon implements PokemonAction{
+public abstract class Pokemon implements PokemonAction {
 
     private String nome;
     private int hp;
@@ -15,16 +15,16 @@ public abstract class Pokemon implements PokemonAction{
     private int defesa;
     private int velocidade;
     private int energia;
-    
-    public Pokemon(String nome, int cp, int ataque, int defesa, 
+
+    public Pokemon(String nome, int cp, int ataque, int defesa,
             int velocidade) {
         setNome(nome);
         setCp(cp);
         setAtaque(ataque);
         setDefesa(defesa);
-        setVelocidade(velocidade,5);
-        this.hp=100;
-        this.energia=0;
+        setVelocidade(velocidade, 5);
+        this.hp = 100;
+        this.energia = 0;
     }
 
     public String getNome() {
@@ -32,7 +32,7 @@ public abstract class Pokemon implements PokemonAction{
     }
 
     public void setNome(String nome) {
-        if (nome.length()>2 && nome.length()<=30){
+        if (nome.length() > 2 && nome.length() <= 30) {
             this.nome = nome;
         }
     }
@@ -40,11 +40,11 @@ public abstract class Pokemon implements PokemonAction{
     public int getHp() {
         return hp;
     }
-    
+
     public void setHp(int hp) {
-        if (hp<0){
-            this.hp = 0;  
-        }else{
+        if (hp < 0) {
+            this.hp = 0;
+        } else {
             this.hp = hp;
         }
     }
@@ -80,8 +80,7 @@ public abstract class Pokemon implements PokemonAction{
     /**
      *
      * @param velocidade
-     * @param limite = 5
-     * Niveis de velocidade (1 a 5)
+     * @param limite = 5 Niveis de velocidade (1 a 5)
      */
     public void setVelocidade(int velocidade, int limite) {
         this.velocidade = Util.valida(velocidade, limite);
@@ -95,70 +94,59 @@ public abstract class Pokemon implements PokemonAction{
         this.energia = Util.valida(energia);
     }
 
-    public void mostrarStatus( ) {
-        Util.imprime("Nome: "+getNome());
-        Util.imprime("HP: "+getHp());
-        Util.imprime("CP: "+getCp());
-        Util.imprime("Ataque: "+getAtaque());
-        Util.imprime("Defesa: "+getDefesa());
-        Util.imprime("Velocidade: "+getVelocidade());
-        Util.imprime("Nível de Energia: "+getEnergia());
+    public void mostrarStatus() {
+        Util.imprime("Nome: " + getNome());
+        Util.imprime("HP: " + getHp());
+        Util.imprime("CP: " + getCp());
+        Util.imprime("Ataque: " + getAtaque());
+        Util.imprime("Defesa: " + getDefesa());
+        Util.imprime("Velocidade: " + getVelocidade());
+        Util.imprime("Nível de Energia: " + getEnergia());
     }
-    
+
     public void setar(int hp, int cp, int ataque, int defesa, int energia) {
         try {
-        
-        if (hp>=0){
-            hp+=2;
-            setHp(getHp()+Util.random(Math.abs(hp)));
-        }else{
-            if (hp<0){
-                hp-=2;
-                setHp(getHp()-Util.random(Math.abs(hp)));
+
+            if (hp >= 0) {
+                hp += 2;
+                setHp(getHp() + Util.random(Math.abs(hp)));
+            } else if (hp < 0) {
+                hp -= 2;
+                setHp(getHp() - Util.random(Math.abs(hp)));
             }
-        }
-        
-        if (cp>=0){
-            cp+=2;
-            setCp(getCp()+Util.random(Math.abs(cp)));
-        }else{
-            if (cp<0){
-                cp-=2;
-                setCp(getCp()-Util.random(Math.abs(cp)));
+
+            if (cp >= 0) {
+                cp += 2;
+                setCp(getCp() + Util.random(Math.abs(cp)));
+            } else if (cp < 0) {
+                cp -= 2;
+                setCp(getCp() - Util.random(Math.abs(cp)));
             }
-        }
-        if (ataque>=0){
-            ataque+=2;
-            setAtaque(getAtaque()+Util.random(Math.abs(ataque)));
-        }else{
-            if (ataque<0){
-                ataque-=2;
-                setAtaque(getAtaque()-Util.random(Math.abs(ataque)));
+            if (ataque >= 0) {
+                ataque += 2;
+                setAtaque(getAtaque() + Util.random(Math.abs(ataque)));
+            } else if (ataque < 0) {
+                ataque -= 2;
+                setAtaque(getAtaque() - Util.random(Math.abs(ataque)));
             }
-        }
-        if (defesa>=0){
-            defesa+=2;
-            setDefesa(getDefesa()+Util.random(Math.abs(defesa)));
-        }else{
-            if (defesa<0){
-                defesa-=2;
-                setDefesa(getDefesa()-Util.random(Math.abs(defesa)));
+            if (defesa >= 0) {
+                defesa += 2;
+                setDefesa(getDefesa() + Util.random(Math.abs(defesa)));
+            } else if (defesa < 0) {
+                defesa -= 2;
+                setDefesa(getDefesa() - Util.random(Math.abs(defesa)));
             }
-        }
-        if (energia>=0){
-            energia+=2;
-            setEnergia(getEnergia()+Util.random(Math.abs(energia)));
-        }else{
-            if (energia<0){
-                energia-=2;
-                setEnergia(getEnergia()-Util.random(Math.abs(energia)));
+            if (energia >= 0) {
+                energia += 2;
+                setEnergia(getEnergia() + Util.random(Math.abs(energia)));
+            } else if (energia < 0) {
+                energia -= 2;
+                setEnergia(getEnergia() - Util.random(Math.abs(energia)));
             }
+        } catch (Exception ex) {
+
         }
-    }catch (Exception ex){
-            
-    } 
-}
-        
+    }
 
     @Override
     public String toString() {
@@ -167,8 +155,4 @@ public abstract class Pokemon implements PokemonAction{
                 + ", velocidade=" + velocidade + ", energia=" + energia + '}';
     }
 
-    
-   
-    
-    
 }
